@@ -41,3 +41,8 @@
 ```cmd
    python manage.py runserver
    ```
+
+- start a postman application and export the api collection
+```cmd
+   start running the api's
+   ```
