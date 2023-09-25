@@ -1,0 +1,1261 @@
+{
+	"info": {
+		"_postman_id": "70e2c993-3e17-4c6d-a6a9-31a43ca21c0e",
+		"name": "cms",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13680920"
+	},
+	"item": [
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "get all users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/api/auth/users",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{local}}/api/auth/users",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 25 Sep 2023 18:12:17 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.11.4"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "347"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"9414fbfe-54f1-4f91-ba1d-0d7de3c89f0d\",\n        \"password\": \"pbkdf2_sha256$600000$1ueCwuBfndGmsQirXxJSTz$JTOpJOimf2rZQdZduHXi8YmjVp9scIz/l7OdmmEQHRc=\",\n        \"last_login\": null,\n        \"email\": \"rk@gmail.com\",\n        \"full_name\": \"r k\",\n        \"phone\": \"9876598762\",\n        \"address\": null,\n        \"city\": null,\n        \"state\": null,\n        \"country\": null,\n        \"pincode\": 134434,\n        \"role\": \"47229395-72b8-4246-b6e7-b4230b5bf799\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "register a user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "author2@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Author123",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "9876598762",
+									"type": "text"
+								},
+								{
+									"key": "full_name",
+									"value": "A K",
+									"type": "text"
+								},
+								{
+									"key": "pincode",
+									"value": "134434",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "6a320e27-debc-4137-a2c7-b7e25f847763",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local}}/api/auth/register",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "r.k@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "Rohan123",
+											"type": "text"
+										},
+										{
+											"key": "phone",
+											"value": "9876598765",
+											"type": "text"
+										},
+										{
+											"key": "full_name",
+											"value": "r k",
+											"type": "text"
+										},
+										{
+											"key": "pincode",
+											"value": "543235",
+											"type": "text"
+										},
+										{
+											"key": "role",
+											"value": "47229395-72b8-4246-b6e7-b4230b5bf799",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{local}}/api/auth/register",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 25 Sep 2023 17:51:14 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.11.4"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "250"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"SUCCESS\",\n    \"data\": {\n        \"password\": \"Rohan123\",\n        \"last_login\": null,\n        \"email\": \"r.k@gmail.com\",\n        \"full_name\": \"r k\",\n        \"phone\": \"9876598765\",\n        \"address\": null,\n        \"city\": null,\n        \"state\": null,\n        \"country\": null,\n        \"pincode\": 543235,\n        \"role\": \"47229395-72b8-4246-b6e7-b4230b5bf799\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "login api",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "rk@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Rohan123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local}}/api/auth/login",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "rk@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "Rohan123",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{local}}/api/auth/login",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 25 Sep 2023 18:19:10 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.11.4"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "252"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"email\": \"rk@gmail.com\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk0MTRmYmZlNTRmMTRmOTFiYTFkMGQ3ZGUzYzg5ZjBkIiwiZW1haWwiOiJya0BnbWFpbC5jb20iLCJwaG9uZSI6Ijk4NzY1OTg3NjIiLCJleHAiOjE2OTU3NTIzNTB9.Yh2pjrmJmv4D-fpJ4u8YWWI3ndfLPMLgibBs6HG1Jj4\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "content",
+			"item": [
+				{
+					"name": "list all content",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{local}}/api/content/list",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"content",
+								"list"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{local}}/api/content/list",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"api",
+										"content",
+										"list"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 25 Sep 2023 20:30:54 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.11.4"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, PUT, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "59"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"title\": \"Testing title\",\n        \"user_email\": \"author@gmail.com\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "retrive content",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id",
+									"value": "6c7821aa-93ae-45a0-8ec8-97e9c27af35b",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local}}/api/content/retrive",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"content",
+								"retrive"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "id",
+											"value": "6c7821aa-93ae-45a0-8ec8-97e9c27af35b",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{local}}/api/content/retrive",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"api",
+										"content",
+										"retrive"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 25 Sep 2023 20:15:16 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.11.4"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, PUT, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "369"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"6c7821aa-93ae-45a0-8ec8-97e9c27af35b\",\n        \"title\": \"Testing title\",\n        \"body\": \"Testing body\",\n        \"summary\": \"Testiing summary\",\n        \"document\": \"http://localhost:8000/content/document/dummy_9cgMoya.pdf\",\n        \"created_at\": \"2023-09-25T20:10:01.866564Z\",\n        \"updated_at\": null,\n        \"user\": \"3f39f7e2-b70a-4b67-8c28-ccc0da123988\",\n        \"created_by\": \"3f39f7e2-b70a-4b67-8c28-ccc0da123988\",\n        \"updated_by\": null\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "create content",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{author}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Testing title",
+									"type": "text"
+								},
+								{
+									"key": "body",
+									"value": "Testing body",
+									"type": "text"
+								},
+								{
+									"key": "summary",
+									"value": "Testiing summary",
+									"type": "text"
+								},
+								{
+									"key": "document",
+									"type": "file",
+									"src": "/Users/rohankalaskar/Downloads/dummy.pdf"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local}}/api/content/create",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"content",
+								"create"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "Testing title",
+											"type": "text"
+										},
+										{
+											"key": "body",
+											"value": "Testing body",
+											"type": "text"
+										},
+										{
+											"key": "summary",
+											"value": "Testiing summary",
+											"type": "text"
+										},
+										{
+											"key": "document",
+											"type": "file",
+											"src": "/Users/rohankalaskar/Downloads/dummy.pdf"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{local}}/api/content/create",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"api",
+										"content",
+										"create"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 25 Sep 2023 20:30:52 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.11.4"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, PUT, DELETE, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "366"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"SUCCESS\",\n    \"data\": {\n        \"id\": \"72742e01-992a-46f2-a9a5-e252f12da9db\",\n        \"title\": \"Testing title\",\n        \"body\": \"Testing body\",\n        \"summary\": \"Testiing summary\",\n        \"document\": \"/content/document/dummy.pdf\",\n        \"created_at\": \"2023-09-25T20:30:52.755191Z\",\n        \"updated_at\": null,\n        \"user\": \"3f39f7e2-b70a-4b67-8c28-ccc0da123988\",\n        \"created_by\": \"3f39f7e2-b70a-4b67-8c28-ccc0da123988\",\n        \"updated_by\": null\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "edit content",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{author2}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Testing  update title",
+									"type": "text"
+								},
+								{
+									"key": "body",
+									"value": "Testing  update body 1",
+									"type": "text"
+								},
+								{
+									"key": "summary",
+									"value": "Testing  update summary 1",
+									"type": "text"
+								},
+								{
+									"key": "document",
+									"type": "file",
+									"src": "/Users/rohankalaskar/Downloads/dummy-2.pdf"
+								},
+								{
+									"key": "id",
+									"value": "6c7821aa-93ae-45a0-8ec8-97e9c27af35b",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local}}/api/content/update",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"content",
+								"update"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "example",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "Testing  update title",
+											"type": "text"
+										},
+										{
+											"key": "body",
+											"value": "Testing  update body 1",
+											"type": "text"
+										},
+										{
+											"key": "summary",
+											"value": "Testing  update summary 1",
+											"type": "text"
+										},
+										{
+											"key": "document",
+											"type": "file",
+											"src": "/Users/rohankalaskar/Downloads/dummy-2.pdf"
+										},
+										{
+											"key": "id",
+											"value": "6c7821aa-93ae-45a0-8ec8-97e9c27af35b",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{local}}/api/content/update",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"api",
+										"content",
+										"update"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 25 Sep 2023 20:20:57 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.11.4"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, PUT, DELETE, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "71"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"SUCCESS\",\n    \"data\": \"author does not have permission to update\"\n}"
+						}
+					]
+				},
+				{
+					"name": "delete content",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id",
+									"value": "6c7821aa-93ae-45a0-8ec8-97e9c27af35b",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local}}/api/content/delete",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"content",
+								"delete"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "example",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "id",
+											"value": "6c7821aa-93ae-45a0-8ec8-97e9c27af35b",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{local}}/api/content/delete",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"api",
+										"content",
+										"delete"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 25 Sep 2023 20:21:48 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.11.4"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, PUT, DELETE, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "57"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"SUCCESS\",\n    \"data\": \"content sucessfully deleted\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "roles",
+			"item": [
+				{
+					"name": "get all roles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/api/auth/roles",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"roles"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{local}}/api/auth/roles",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"roles"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 25 Sep 2023 17:34:55 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.11.4"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "124"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"47229395-72b8-4246-b6e7-b4230b5bf799\",\n        \"name\": \"admin\"\n    },\n    {\n        \"id\": \"6a320e27-debc-4137-a2c7-b7e25f847763\",\n        \"name\": \"author\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "create-roles",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "author",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local}}/api/auth/create-roles",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"create-roles"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "author",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{local}}/api/auth/create-roles",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"create-roles"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 25 Sep 2023 17:34:49 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.11.4"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "89"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"SUCCESS\",\n    \"data\": {\n        \"id\": \"6a320e27-debc-4137-a2c7-b7e25f847763\",\n        \"name\": \"author\"\n    }\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{admin}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "local",
+			"value": "localhost:8000",
+			"type": "string"
+		},
+		{
+			"key": "author",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjNmMzlmN2UyYjcwYTRiNjc4YzI4Y2NjMGRhMTIzOTg4IiwiZW1haWwiOiJhdXRob3JAZ21haWwuY29tIiwicGhvbmUiOiI5ODc2NTk4NzYyIiwiZXhwIjoxNjk1NzU0NzUwfQ.2U934sgNT65VJRrWNZeLzH1-Z8bb92oVpnMsjHFV81c",
+			"type": "string"
+		},
+		{
+			"key": "author2",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImVmNjdiZjY3NjRjODQ5ODBhNzE4YWZkYTNjOWM2NDQzIiwiZW1haWwiOiJhdXRob3IyQGdtYWlsLmNvbSIsInBob25lIjoiOTg3NjU5ODc2MiIsImV4cCI6MTY5NTc1Njc3N30.iUYgsok4oW24RIwlKvz7BAs8_ZvT1ZMy2pa3DWOpNdA",
+			"type": "string"
+		},
+		{
+			"key": "admin",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk0MTRmYmZlNTRmMTRmOTFiYTFkMGQ3ZGUzYzg5ZjBkIiwiZW1haWwiOiJya0BnbWFpbC5jb20iLCJwaG9uZSI6Ijk4NzY1OTg3NjIiLCJleHAiOjE2OTU3NTY4NjV9.LhoLJJSK-uUTN3EevijxbptbRSd8exg2ZLEL_KXzJy4",
+			"type": "string"
+		}
+	]
+}
