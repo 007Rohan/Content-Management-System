@@ -28,6 +28,10 @@
 ```cmd
    pip install -r requirements.txt
    ```
+- connect to postgresql database
+```cmd
+   create psql database with name cms and connect according to django settings
+   ```
 
 - migrate the database tables
 ```cmd
