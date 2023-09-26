@@ -10,23 +10,23 @@ import re
 from datetime import datetime,timedelta
 
 
-def get_phone_regex():
-    return RegexValidator(
-        regex=r'^[6-9]\d{9}$', message=_(
-            'Enter a valid phone number'
-        )
-    )
+def validate_phone():
+    return RegexValidator(regex=r'^[6-9]\d{9}$', message=_('Enter a valid phone number'))
 
 
 def validate_length(value):
     length = len(str(value))
     if length != 6:
-        raise ValidationError(
-            _('%(value)s is an invalid pincode')
-        )
+        raise ValidationError( _('%(value)s is an invalid pincode'))
 
-def get_password_regex(password):
-    if re.fullmatch(r'[A-Za-z0-9]{8,}', password):
+
+def validate_full_name(value):
+    if len(str(value).split(' ')) != 2:
+        raise ValidationError(_('%(value)s is an invalid name, valid name is two words only'))
+
+
+def get_password_regex(value):
+    if re.fullmatch(r'[A-Za-z0-9]{8,}', value):
         return True
     return False
 
@@ -38,6 +38,7 @@ class userManager(UserManager):
         """
         if not email:
             raise ValueError('The given email must be set')
+        
 
         email = self.normalize_email(email)
         user = self.model(email=email, **extra_fields)
@@ -54,8 +55,8 @@ class role(models.Model):
 class rootUser(AbstractBaseUser):
     id = models.UUIDField(primary_key=True,default=uuid.uuid4,editable=False)
     email = models.EmailField(max_length=254, validators=[EmailValidator], null=False)
-    full_name =  models.CharField(max_length=125)
-    phone = models.CharField(max_length=15, validators=[get_phone_regex()], null=False)
+    full_name =  models.CharField(max_length=125,validators=[validate_full_name])
+    phone = models.CharField(max_length=15, validators=[validate_phone()], null=False)
     address = models.TextField(null=True,blank=True)
     city = models.CharField(max_length=125,null=True,blank=True)
     state = models.CharField(max_length=125,null=True,blank=True)

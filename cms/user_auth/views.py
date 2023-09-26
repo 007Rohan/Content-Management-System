@@ -44,8 +44,6 @@ class RegisterViewSet(viewsets.ModelViewSet):
         if user_obj:
             return Response(status=400,data={'status':'FAILED','data':'user with this email or phone already exits'})
         else:
-            if len(request_data.get('full_name').split(' ')) > 2:
-                return Response(status=400,data={'status':'FAILED','data':'Please enter a valid name(two words only)'})
             verify_password = get_password_regex(request_data.get('password'))
             if verify_password is False:
                 return Response(status=400,data={'status':'Failed','data':'password must contain one uppercase one lowercase and lenght should be min 8'})
