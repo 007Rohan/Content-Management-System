@@ -26,7 +26,7 @@ def validate_full_name(value):
 
 
 def get_password_regex(value):
-    if re.fullmatch(r'[A-Za-z0-9]{8,}', value):
+    if re.fullmatch(r"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$", value):
         return True
     return False
 
