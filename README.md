@@ -46,3 +46,10 @@
 ```cmd
    start running the api's
    ```
+- process to create a content
+```cmd
+   create roles admin and author in roles table using role api
+   register mutliple users using mandatory fields based on roles using user api
+   create update delete and list all content based on user roles using content api
+
+   ```
