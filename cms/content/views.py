@@ -1,3 +1,4 @@
+from django.db.models import Q
 from .models import contents
 from .serializers import ContentSerializer,AllContentSerializer
 from rest_framework import viewsets
@@ -26,7 +27,7 @@ class ContentViewSet(viewsets.ModelViewSet):
         user = request.user
         if user.role.name == 'author':
             self.queryset = self.queryset.filter(user=user.id)
-        self.queryset = self.queryset.filter(id=request_data.get('id',''))
+        self.queryset = self.queryset.filter(Q(title__contains=request_data.get('search_term'))|Q(body__contains=request_data.get('search_term'))|Q(summary__contains=request_data.get('search_term'))|Q(categories__contains=request_data.get('search_term')))
         return super().list(request, *args, **kwargs)
     
     
