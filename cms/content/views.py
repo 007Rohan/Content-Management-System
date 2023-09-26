@@ -26,7 +26,7 @@ class ContentViewSet(viewsets.ModelViewSet):
         user = request.user
         if user.role.name == 'author':
             self.queryset = self.queryset.filter(user=user.id)
-        self.queryset = self.queryset.filter(id=request_data.get('id'))
+        self.queryset = self.queryset.filter(id=request_data.get('id',''))
         return super().list(request, *args, **kwargs)
     
     
@@ -47,7 +47,7 @@ class ContentViewSet(viewsets.ModelViewSet):
         user = request.user
         request_data['updated_by'] = user.id
         request_data['updated_at'] = datetime.datetime.now()
-        content_obj = self.queryset.filter(id=request_data.get('id')).first()
+        content_obj = self.queryset.filter(id=request_data.get('id','')).first()
         if user.role.name == 'author':
             if content_obj.user !=user.id:
                 return Response(status=200,data={'status':'SUCCESS','data':'author does not have permission to update'})
@@ -61,7 +61,7 @@ class ContentViewSet(viewsets.ModelViewSet):
     def delete(self, request, *args, **kwargs):
         request_data = request.data
         user = request.user
-        content_obj = self.queryset.filter(id=request_data.get('id')).first()
+        content_obj = self.queryset.filter(id=request_data.get('id','')).first()
         if content_obj and user.role.name == 'author':
             if content_obj.user !=user.id:
                 return Response(status=200,data={'status':'SUCCESS','data':'author does not have permission to delete'})

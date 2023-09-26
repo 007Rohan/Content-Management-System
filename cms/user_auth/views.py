@@ -1,8 +1,9 @@
+from user_auth.jwt import userJWTAuthentication
 from .models import get_password_regex, role,rootUser,userToken
 from .serializers import RoleSerializer,UserSerializer,LoginSerializer,AllUserSerializer
 from rest_framework.response import Response
 from rest_framework import viewsets,generics
-from rest_framework.permissions import AllowAny
+from rest_framework.permissions import AllowAny,IsAuthenticated
 from django.contrib.auth.hashers import check_password
     
 
@@ -18,13 +19,13 @@ class RoleViewSet(viewsets.ModelViewSet):
     
     def create(self, request, *args, **kwargs):
         request_data = request.data
-        role_obj = self.queryset.filter(name = request_data.get('name')).first()
+        role_obj = self.queryset.filter(name = request_data.get('name','')).first()
         if role_obj:
             return Response(status=400,data={'status':'FAILED','data':'this role already exits'})
         else:
             serializer_obj = self.serializer_class(data=request_data)
             if serializer_obj.is_valid():       
-                serializer_obj.save()
+                # serializer_obj.save()
                 return Response(status=200,data={'status':'SUCCESS','data':serializer_obj.data})
             return Response(status=400,data={'status':'Failed','data':serializer_obj.errors})
 
@@ -40,11 +41,11 @@ class RegisterViewSet(viewsets.ModelViewSet):
     
     def create(self, request, *args, **kwargs):
         request_data = request.data
-        user_obj = self.queryset.filter(email = request_data.get('email'),phone = request_data.get('phone')).first()
+        user_obj = self.queryset.filter(email = request_data.get('email',''),phone = request_data.get('phone','')).first()
         if user_obj:
             return Response(status=400,data={'status':'FAILED','data':'user with this email or phone already exits'})
         else:
-            verify_password = get_password_regex(request_data.get('password'))
+            verify_password = get_password_regex(request_data.get('password',''))
             if verify_password is False:
                 return Response(status=400,data={'status':'Failed','data':'password must contain one uppercase one lowercase and lenght should be min 8'})
             serializer_obj = self.serializer_class(data=request_data)
@@ -62,8 +63,8 @@ class LoginAPIView(generics.GenericAPIView):
 
     def post(self, request):
         request_data = request.data
-        email = request_data.get('email', None)
-        input_pw = request_data.get('password', None)
+        email = request_data.get('email', '')
+        input_pw = request_data.get('password', '')
         user = rootUser.objects.filter(email = email).first()
         if user:
             usercheck = rootUser.objects.filter(email=email).values('password')
