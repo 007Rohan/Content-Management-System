@@ -25,7 +25,7 @@ class RoleViewSet(viewsets.ModelViewSet):
         else:
             serializer_obj = self.serializer_class(data=request_data)
             if serializer_obj.is_valid():       
-                # serializer_obj.save()
+                serializer_obj.save()
                 return Response(status=200,data={'status':'SUCCESS','data':serializer_obj.data})
             return Response(status=400,data={'status':'Failed','data':serializer_obj.errors})
 
